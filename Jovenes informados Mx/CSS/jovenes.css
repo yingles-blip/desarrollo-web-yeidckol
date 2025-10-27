@@ -1,0 +1,423 @@
+/* Reseteo de la página para que todos los navegadores la muestren de forma consistente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Esto asegura que el relleno y el borde no aumenten el tamaño de un elemento */
+  }
+  
+  /* Propiedad para un desplazamiento suave en las anclas */
+  html {
+  scroll-behavior: smooth; /* Hace que el desplazamiento al hacer clic en un enlace (ej: #menu)
+  sea una animación suave en lugar de un salto brusco. */
+  }
+  
+  body {
+  line-height: 1.6; /* Define la altura de cada línea de texto, para que no esté muy apretado. */
+  color: #333;
+  background-color: #EEE3C8;
+  font-family: 'Fredoka', sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  .header {
+  background: #251D82;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  position: fixed;
+  justify-content: space-between; /* Esto los manda a las esquinas */
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  }
+  
+  /* Estilos para el contenedor del logo y el título */
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  }
+  
+  .logo img {
+  border-radius: 100px;
+  width: 150px;
+  height: 90px;
+  }
+  
+  .header h1 {
+  margin: 0;
+  }
+  
+  /* BOTONES DE INICIO Y BARRA DE NAVEGACIÓN */
+  .nav ul {
+  display: flex;
+  list-style: none; /* Quita los puntos (viñetas) de la lista. */
+  gap: 15px; /*Espacio entre las secciones del menú nav */
+  }
+  
+  .nav-button {
+  background-color: #b9ddff;
+  color: #333;
+  padding: 10px 20px;
+  margin-left: 15px;
+  border-radius: 10px;
+  border: 3px solid white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav-button:hover {
+  background-color: #67648d;
+  transform: scale(1.05);
+  }
+  
+  /* Sección de inicio (Hero) */
+  .hero {
+  position: relative;
+  height: 100vh;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 230px;
+  overflow: hidden;
+  }
+
+  .hero::before {
+  content: '';              
+  position: absolute;      
+  top: 0; left: 0;          
+  width: 100%; height: 100%; 
+  background-color: #33333351; 
+  z-index: 1;            
+  }
+
+  .hero-content {
+  position: relative; 
+  z-index: 2;         
+  }
+   
+  .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* detrás del texto */
+  overflow: hidden;
+  background: no-repeat center center/cover;
+  }
+
+  
+  .video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* el video se adapta a todo el fondo */
+  pointer-events: none; /* evita clics encima */          
+  }
+
+  .hero-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #b9ddff8f;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 50px;
+  }
+  
+  .hero-content p {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 2rem;
+  }
+  
+  /* Estilos para el contenedor de los botones del hero */
+  .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-weight: bold;
+  }
+  
+  /* Estilos para los botones de adopción y shop */
+  .btn {
+  display: inline-block;
+  background: #251D82;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: 3px solid #b9ddff;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s;
+  }
+  .btn:hover {
+  background: transparent;
+  color: #b9ddff;
+  border-color: #251D82;
+  }
+  
+  /* Estilos para todas las secciones principales */
+  main section {
+  padding: 50px 20px;
+  margin: 0 auto;
+  text-align: center;
+  }
+  
+  /* Sección Quiénes Somos */
+  .quienes-somos {
+  background-color: #b9ddff;
+  }
+  
+  .quienes-somos h2 {
+  margin-bottom: 20px;
+  }
+  
+  .quienes-somos .content {
+  max-width: 800px;
+  margin: 0 auto;
+  }
+  
+  /* Sección de adopción y botones de filtro */
+  .adopcion {
+  background-color: #EEE3C8;
+  }
+  
+  .adopcion h2 {
+  margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+  margin-bottom: 30px;
+  }
+  
+  .filter-btn {
+  background-color: #251D82;
+  border: 3px solid #b9ddff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .filter-btn:hover, .filter-btn.active {
+  background-color: #b9ddff;
+  color: #333;
+  border: 3px solid #251D82;
+  transform: scale(1.05);
+  }
+  
+  /* Estilos para el contenedor de la galería de adopción */
+  #perros-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  }
+  
+  /* Estilos para cada tarjeta de perro (generada por JS) */
+  .perro-card {
+  border: 2px solid #b9ddff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  background-color: #eeeeee;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* Nuevo: para mejor control del diseño interno */
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .perro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .perro-card img {
+  width: 100%;
+  height: 197px;
+  object-fit:cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  }
+  
+  .perro-card figcaption {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  }
+  
+  /* Estilo para mostrar la descripción completa */
+  .card-description {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #515050;
+  line-height: 1.4;
+  /* Esto es clave para que se muestre */
+  display: block;
+  }
+  
+  
+  /* Estilos para el slider de fotos */
+  /* Estilos para el slider */
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+  .column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  }
+  
+  .column img {
+  border: 7px solid #251D82;
+  border-radius: 15px;
+  }
+
+  .row h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  }
+
+  /* Clear floats after image containers */
+  .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  }
+  
+  
+  
+  /* Sección de promociones */
+  .promociones {
+  text-align: center;
+  background-color: #b9ddff;
+  padding: 50px 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  }
+  
+  .promociones h3 {
+  color: #333;
+  margin-bottom: 40px;
+  }
+  
+  .promociones p {
+  margin-bottom: 10px;
+  }
+  
+  /* Pie de página (footer) */
+  footer {
+  background-color: #251D82;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  }
+  
+  .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: left;
+  }
+  
+  @media (min-width: 768px) {
+  .footer-grid {
+  grid-template-columns: 1fr 1fr;
+  }
+  }
+  
+  .contacto, .redes-sociales {
+  padding: 0 10px;
+  }
+  
+  .contacto h3, .redes-sociales h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  }
+  
+  .contacto address p {
+  margin: 5px 0;
+  }
+  
+  .contacto a {
+  color: #EEE3C8;
+  text-decoration: none;
+  transition: color 0.3s;
+  }
+  
+  .contacto a:hover {
+  text-decoration: underline;
+  }
+  
+  .redes-iconos a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+  }
+  
+  .redes-iconos a:hover {
+  color: #86C7D7;
+  }
+  
+  .footer-bottom {
+  border-top: 1px solid #86C7D7;
+  padding-top: 20px;
+  position: relative;
+  }
+  
+  .scroll-to-top-btn {
+  background-color: #b9ddff;
+  border: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .scroll-to-top-btn:hover {
+  background-color: #6d8ed6;
+  transform: translateX(-50%) scale(1.1);
+  }
+  
+  .copyright {
+  font-size: 0.8rem;
+  margin: 0;
+  }
+
+  /* Pantallas pequeñas  */
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: row;
+    }
+}
+
+/* Pantallas medianas */
+@media screen and (min-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+/* Pantallas extra grandes */
+@media screen and (min-width: 1200px) {
+    body {
+        flex-direction: column;
+    }
+}
