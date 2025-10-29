@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C I E L O - C L A R O </title>
+<link rel="stylesheet" href="Css/weather.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1 style="text-align:center;">C I E L O - C L A R O</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="weather-app">
+            <h1>C l i m a    M e x i c o M X  ☁️ 🌡️</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Ingresa una ciudad de México (ej: Monterrey)">
+                <button id="search-button">Buscar</button>
+            </div>
+
+            <div id="weather-data" style="display: none;">
+                <div id="current-weather" class="current-weather"></div>
+                <div id="forecast" class="forecast">
+                    <h2>Pronóstico para los próximos días</h2>
+                </div>
+            </div>
+
+            <p id="error-message" class="error-message"></p>
+        </div>
+    </main>
+
+    <!--Footer de la página-->
+    <footer class="footer">
+        <p>&copy; 2025 Cielo Claro Yeidckol  Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/weather.js"></script>
+</body>
+</html>
